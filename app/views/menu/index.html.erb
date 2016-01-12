@@ -1,2 +1,18 @@
-<h1>Menu#index</h1>
-<p>Find me in app/views/menu/index.html.erb</p>
+<h1>Cheetah Restaurant Menu</h1>
+
+<% @menu_items.in_groups_of(3) do |group| %>
+  <div class="row">
+  	<% group.compact.each do |item| %>
+    <div class="col-sm-4">
+  	  <div class="card">
+  	  	<%= image_tag item.image_url_or_default, alt: item.name  %>
+  	    <div class="card-block">
+  	      <h4 class="card-title"><%= item.name %></h4>
+  	      <p class="card-text"><%= item.description %></p>
+  	      <a href="#" class="btn btn-success">Order</a>
+  	    </div>
+  	  </div>
+    </div>
+    <% end %>
+  </div>
+<% end %>
