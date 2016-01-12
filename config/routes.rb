@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :sections
+
+  get 'menu' => 'menu#index'
   get 'contact_us' => 'welcome#contact_us'
 
   # The priority is based upon order of creation: first created -> highest priority.
