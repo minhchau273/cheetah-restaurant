@@ -1,0 +1,55 @@
+<%= form_for(@menu_item) do |f| %>
+  <% if @menu_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@menu_item.errors.count, "error") %> prohibited this menu_item from being saved:</h2>
+
+      <ul>
+      <% @menu_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group row">
+    <%= f.label :name, class: 'col-sm-2 form-control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= f.label :description, class: 'col-sm-2 form-control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_area :description, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= f.label :price, class: 'col-sm-2 form-control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :price, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 form-control-label">Section</label>
+    <div class="col-sm-10">
+      <fieldset class="form-group">
+        <select class="form-control" name="menu_item[section_id]" id="menu_item_section_id">
+          <% @sections.each do |section| %>
+            <option value="<%= section.id %>"><%= section.name %></option>
+          <% end %>
+        </select>
+      </fieldset>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= f.label :image_url, class: 'col-sm-2 form-control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :image_url, class: 'form-control' %>
+    </div>
+  </div>
+  
+  <div class="form-group row">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+  </div>
+<% end %>
