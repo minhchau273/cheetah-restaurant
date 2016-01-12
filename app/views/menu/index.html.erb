@@ -1,18 +1,40 @@
 <h1>Cheetah Restaurant Menu</h1>
 
+<ul class="nav nav-tabs">
+  <% @sections.each do |section| %>
+    <li class="nav-item">
+      <% if section.id == @section_id %>
+        <%= link_to section.name, menu_path(section: section), class: 'nav-link active'  %>
+      <% else %>      
+        <%= link_to section.name, menu_path(section: section), class: 'nav-link'  %>
+      <% end %>
+    </li>
+  <% end %> 
+</ul>
+<br/>
+
 <% @menu_items.in_groups_of(3) do |group| %>
   <div class="row">
   	<% group.compact.each do |item| %>
-    <div class="col-sm-4">
-  	  <div class="card">
-  	  	<%= image_tag item.image_url_or_default, alt: item.name  %>
-  	    <div class="card-block">
-  	      <h4 class="card-title"><%= item.name %></h4>
-  	      <p class="card-text"><%= item.description %></p>
-  	      <a href="#" class="btn btn-success">Order</a>
-  	    </div>
-  	  </div>
-    </div>
+      <div class="col-sm-4">
+    	  <div class="card">
+    	  	<p style="text-align: center">
+            <%= image_tag item.image_url_or_default, alt: item.name, style: 'width: 100%', class: 'card-img-top' %>
+          </p>
+    	    <div class="card-block">
+    	      <h4 class="card-title"><%= item.name %></h4>
+    	      <p class="card-text"><%= item.description %></p>
+            <div class="row">
+              <div class="col-md-6">
+                <span class="label label-info"><%= item.formated_price %></span>
+              </div>
+              <div class="col-md-offset-6 text-xs-right">
+                <a href="#" class="btn btn-success pull-right">Order</a>
+              </div>
+            </div>
+    	    </div>
+    	  </div>
+      </div>
     <% end %>
   </div>
 <% end %>
