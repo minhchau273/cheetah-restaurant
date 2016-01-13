@@ -11,10 +11,10 @@
 <br/>
 
 <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown-sort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <%= @sort.titlecase %>
   </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+  <div class="dropdown-menu" aria-labelledby="dropdown-sort">
     <%= link_to 'Alphabetical', menu_path(section: @section_id, sort: 'alphabetical'), class: 'dropdown-item'  %>
     <%= link_to 'Price Low To High', menu_path(section: @section_id, sort: 'price_low_to_high'), class: 'dropdown-item'  %>
     <%= link_to 'Price High To Low', menu_path(section: @section_id, sort: 'price_high_to_low'), class: 'dropdown-item'  %>
