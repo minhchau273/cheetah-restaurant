@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe MenuItem, type: :model do
-  let(:menu_item) { MenuItem.new(name: "Pho ga") }
+  let(:menu_item) { build(:menu_item) }
+  
+  it { is_expected.to belong_to(:section) }
 
   describe "#image_url_or_default" do
     expected_url = "#{MenuItem::IMAGE_BASE_URL}Pho+ga"
