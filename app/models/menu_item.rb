@@ -3,11 +3,13 @@ class MenuItem < ActiveRecord::Base
 
   include ActionView::Helpers::NumberHelper
 
+  IMAGE_BASE_URL = "http://loremflickr.com/320/240/"
+
   def image_url_or_default
    	if image_url.present?
    	  image_url
     else
-      "http://loremflickr.com/320/240/#{CGI.escape name}"
+      "#{IMAGE_BASE_URL}#{CGI.escape name}"
    	end
   end
 
