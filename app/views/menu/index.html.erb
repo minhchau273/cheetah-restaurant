@@ -31,7 +31,10 @@
             <%= image_tag item.image_url_or_default, alt: item.name, style: 'width: 100%', class: 'card-img-top' %>
           </p>
     	    <div class="card-block">
-    	      <h4 class="card-title"><%= item.name %></h4>
+    	      <h4 class="card-title">
+              <%= item.name %>
+              <span class="label label-default"><%= item.orders.size %></span>
+            </h4>
     	      <p class="card-text"><%= item.description %></p>
             <div class="row">
               <div class="col-md-6">

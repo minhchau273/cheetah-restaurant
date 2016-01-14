@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :menu_items
+  resources :menu_items do
+    # menu_item/menu_item_id/orders/new
+    resources :orders
+  end
   resources :sections
 
   get 'menu' => 'menu#index'

@@ -1,5 +1,6 @@
 class MenuItem < ActiveRecord::Base
   belongs_to :section
+  has_many :orders, dependent: :destroy
 
   include ActionView::Helpers::NumberHelper
 
