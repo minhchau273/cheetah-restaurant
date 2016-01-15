@@ -23,7 +23,7 @@ RSpec.describe OrdersController, type: :controller do
 
       it "redirects to Menu page" do
         expect(response).to redirect_to menu_path
-        expect(flash["success"]).to eq "Order submitted. Thank you!"
+        expect(flash["success"]).to eq ORDER_SUCCESSFULLY_MESSAGE
       end
     end
 
@@ -34,7 +34,7 @@ RSpec.describe OrdersController, type: :controller do
 
       it "goes back to Order page" do
         expect(response).to render_template :new
-        expect(flash["error"]).to eq "Error: Name can't be blank"
+        expect(flash["error"]).to eq ORDER_WITHOUT_NAME_ERROR
       end
     end
   end
