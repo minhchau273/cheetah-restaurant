@@ -14,7 +14,7 @@ And "There are 2 sections with some items in each section" do
 end
 
 Then "I can see the the menu title" do
-  expect(page).to have_content 'Cheetah Restaurant Menu'
+  expect(page).to have_content "#{RESTAURANT_NAME} Menu"
 end
 
 And "I can see 2 sections' names" do
