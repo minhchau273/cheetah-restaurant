@@ -26,3 +26,7 @@ Feature: View menu
     When I click "dropdown-sort"
     And I click "Price High To Low"
     Then I can see all items are sorted by price high to low
+
+  Scenario: View item detail
+    When I click "Pho ga"
+    Then I can see "Pho ga"
