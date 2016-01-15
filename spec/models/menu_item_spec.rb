@@ -17,13 +17,13 @@ RSpec.describe MenuItem, type: :model do
       end
 
       it "returns its image url" do
-        expect(menu_item.image_url_or_default).to eq(expected_url)
+        expect(menu_item.image_url_or_default).to eq expected_url
       end
     end
 
     context "this item does have image url" do
       it "generates a default url" do
-        expect(menu_item.image_url_or_default).to eq(expected_url)
+        expect(menu_item.image_url_or_default).to eq expected_url
       end
     end
   end
@@ -36,7 +36,7 @@ RSpec.describe MenuItem, type: :model do
     end
 
     it "returns Vietnamese formated price" do
-      expect(menu_item.formated_price).to eq(expected_price)
+      expect(menu_item.formated_price).to eq expected_price
     end
   end
 end
