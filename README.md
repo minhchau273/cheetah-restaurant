@@ -18,3 +18,5 @@ Time spent: 18hrs
 
 - [x] Write unit test for models and controllers using RSpec.
 - [x] Write integration test using Cucumber.
+
+My app is deployed at [Cheetah Restaurant](https://cheetah-restaurant.herokuapp.com/).
