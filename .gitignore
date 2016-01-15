@@ -14,3 +14,9 @@
 
 # Ignore byebug histore
 .byebug_history
+
+# Ignore coverage folder
+/coverage
+
+# OS X
+.DS_Store
