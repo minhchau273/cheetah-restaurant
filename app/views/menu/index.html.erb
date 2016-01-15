@@ -41,7 +41,7 @@
                 <span class="label label-info"><%= item.formated_price %></span>
               </div>
               <div class="col-md-offset-6 text-xs-right">
-                <a href="#" class="btn btn-success pull-right">Order</a>
+                <%= link_to "Order", new_menu_item_order_path(item.id), class: "btn btn-success pull-right"  %>
               </div>
             </div>
     	    </div>
