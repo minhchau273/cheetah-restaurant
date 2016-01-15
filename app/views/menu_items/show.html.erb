@@ -1,29 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @menu_item.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @menu_item.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @menu_item.price %>
-</p>
-
-<p>
-  <strong>Section:</strong>
-  <%= @menu_item.section.name %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @menu_item.image_url %>
-</p>
-
-<%= link_to 'Edit', edit_menu_item_path(@menu_item) %> |
-<%= link_to 'Back', menu_items_path %>
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-sm-6">
+      <%= image_tag @menu_item.image_url_or_default, alt: @menu_item.name, style: 'width: 100%' %>
+    </div>
+    <div class="col-sm-6">
+      <h2>
+        <%= @menu_item.name %>
+        <span class="label label-default"><%= @menu_item.orders.size %></span>
+      </h2>
+      <table width="100%">
+        <tr>
+          <td class="title-right">Description</td>
+          <td><%= @menu_item.description %></td>
+        </tr>
+        <tr>
+          <td class="title-right">Section</td>
+          <td><%= @menu_item.section.name %></td>
+        </tr>
+        <tr>
+          <td class="title-right">Price</td>
+          <td><span class="label label-info"><%= @menu_item.formated_price %></span></td>
+        </tr>
+      </table>
+      <br/>
+      <%= link_to "Order", new_menu_item_order_path(@menu_item.id), class: "btn btn-success"  %>
+    </div>
+  </div>
+</div>
