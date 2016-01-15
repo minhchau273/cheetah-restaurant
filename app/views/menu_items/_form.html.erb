@@ -33,8 +33,11 @@
     <div class="col-sm-10">
       <fieldset class="form-group">
         <select class="form-control" name="menu_item[section_id]" id="menu_item_section_id">
+          <% selected_section_id = @menu_item.section.id || @sections.first.id %>
           <% @sections.each do |section| %>
-            <option value="<%= section.id %>"><%= section.name %></option>
+            <option value="<%= section.id %>" <%= section.id == selected_section_id ? 'selected' : '' %>>
+              <%= section.name %>
+            </option>
           <% end %>
         </select>
       </fieldset>
