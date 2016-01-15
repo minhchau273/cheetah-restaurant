@@ -3,7 +3,7 @@ When "I choose Order an item" do
 end
 
 Then "I can see Order page" do
-  expect(page).to have_content "Order for"
+  step "I can see \"Order for\""
 end
 
 When "I input name" do
@@ -11,9 +11,9 @@ When "I input name" do
 end
 
 Then "I can see sucessful message" do
-  expect(page).to have_content ORDER_SUCCESSFULLY_MESSAGE
+  step "I can see \"#{ORDER_SUCCESSFULLY_MESSAGE}\""
 end
 
 Then "I can see error message" do
-  expect(page).to have_content ORDER_WITHOUT_NAME_ERROR
+  step "I can see \"#{ORDER_WITHOUT_NAME_ERROR}\""
 end

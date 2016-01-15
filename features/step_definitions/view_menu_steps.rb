@@ -14,20 +14,20 @@ And "There are 2 sections with some items in each section" do
 end
 
 Then "I can see the the menu title" do
-  expect(page).to have_content "#{RESTAURANT_NAME} Menu"
+  step "I can see \"#{RESTAURANT_NAME} Menu\""
 end
 
 And "I can see 2 sections' names" do
-  expect(page).to have_content "Breakfast"
-  expect(page).to have_content "Lunch"
+  step "I can see \"Breakfast\""
+  step "I can see \"Lunch\""
 end
 
 Then "I can see all menu items of Lunch section" do
-  expect(page).to have_content "Pho ga"
+  step "I can see \"Pho ga\""
 end
 
 Then "I can see the sort type is set Alphabetical by default" do
-  expect(page).to have_content "Alphabetical"
+  step "I can see \"Alphabetical\""
 end
 
 Then(/^I can see all items are sorted by (.*?)$/) do |sort|

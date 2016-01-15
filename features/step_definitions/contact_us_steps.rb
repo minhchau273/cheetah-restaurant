@@ -1,3 +1,3 @@
 Then "I can see the restaurant's address" do
-  expect(page).to have_content RESTAURANT_NAME
+  step "I can see \"#{RESTAURANT_NAME}\""
 end
