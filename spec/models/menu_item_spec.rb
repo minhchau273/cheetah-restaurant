@@ -3,10 +3,13 @@ require 'rails_helper'
 RSpec.describe MenuItem, type: :model do
   let(:menu_item) { build(:menu_item) }
   
-  it { is_expected.to belong_to(:section) }
+  describe "relationships" do
+    it { is_expected.to belong_to(:section) }
+    it { is_expected.to have_many(:orders).dependent(:destroy) }
+  end
 
   describe "#image_url_or_default" do
-    expected_url = "#{MenuItem::IMAGE_BASE_URL}Pho+ga"
+    let(:expected_url) { "#{MenuItem::IMAGE_BASE_URL}Pho+ga" }
 
     context "this item has image url" do
       before do
