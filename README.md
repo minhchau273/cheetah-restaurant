@@ -1,6 +1,6 @@
 # Cheetah Restaurant
 
-Time spent: 18hrs
+Time spent: 14hrs
 
 ### Features
 
