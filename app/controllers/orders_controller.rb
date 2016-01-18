@@ -10,11 +10,10 @@ class OrdersController < ApplicationController
     @order.menu_item = @menu_item
 
     if @order.save
-      flash[:success] = ORDER_SUCCESSFULLY_MESSAGE
-      redirect_to menu_path
+      redirect_to menu_path, success: ORDER_SUCCESSFULLY_MESSAGE
     else
-      flash[:error] = "Error: #{@order.errors.full_messages.to_sentence}"
-      render "new"
+      flash.now[:error] = "Error: #{@order.errors.full_messages.to_sentence}"
+      render 'new'
     end
   end
 

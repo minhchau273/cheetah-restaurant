@@ -22,13 +22,8 @@
 	</nav>
 	<br/>
 
-  <% if flash[:error] %>
-    <div class="alert alert-danger"><%= flash[:error] %></div>
-  <% end %>
+  <%= render partial: 'layouts/flash_messages', flash: flash %>
 
-  <% if flash[:success] %>
-    <div class="alert alert-success"><%= flash[:success] %></div>
-  <% end %>
   <%= yield %>
 
   </div>
