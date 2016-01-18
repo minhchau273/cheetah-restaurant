@@ -4,7 +4,7 @@
   <% @sections.each do |section| %>
     <li class="nav-item">
       <% class_name = section.id == @section_id ? 'nav-link active' : 'nav-link' %>
-      <%= link_to section.name, menu_path(section: section), class: class_name %>
+      <%= link_to section.name, menu_path(section_id: section.id), class: class_name %>
     </li>
   <% end %> 
 </ul>

@@ -1,8 +1,8 @@
 class MenuController < ApplicationController
   def index
     @sections = Section.all
-    params[:section] ||= Section.first.try(:id)
-    section = Section.find_or_initialize_by(id: params[:section])
+    params[:section_id] ||= Section.first.try(:id)
+    section = Section.find_or_initialize_by(id: params[:section_id])
     @sort = params[:sort] || "alphabetical"
     @menu_items = case @sort
                   when "price_low_to_high" then section.menu_items.order(:price)
